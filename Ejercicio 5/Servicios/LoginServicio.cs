@@ -16,7 +16,7 @@ namespace Ejercicio_5.Servicios
             loginRepositorio = new LoginRepositorio(config.CadenaConexion);
         }
 
-        public Task<bool> ValidarUsuario(Login login)
+        public async Task<bool> ValidarUsuario(Login login)
         {
             return await loginRepositorio.ValidarUsuario(login);
         }

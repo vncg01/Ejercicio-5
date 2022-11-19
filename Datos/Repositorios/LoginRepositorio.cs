@@ -31,8 +31,8 @@ namespace Datos.Repositorios
             {
                 using MySqlConnection conexion = Conexion();
                 await conexion.OpenAsync();
-                string sql = "SELECT 1 FROM usuario WHERE Codigo = @Codigo AND Clave = @Clave;";
-                valido = await conexion.ExecuteScalarAsync<bool>(sql, new { login.Usuario, login.Clave });
+                string sql = "SELECT 1 FROM usuario WHERE Codigo=@Codigo AND Clave=@Clave;";
+                valido = await conexion.ExecuteScalarAsync<bool>(sql, new { login.Codigo, login.Clave });
             }
             catch (Exception ex)
             {
